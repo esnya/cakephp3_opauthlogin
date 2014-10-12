@@ -47,10 +47,7 @@ $config = [
 ```
 
 * Create user table
-<<<<<<< HEAD
 
-=======
->>>>>>> bf22368fb1a747ff225b54648450adf1e09ea8aa
 "provider" and "uid" is required, must be a primary key.
 ```sql
 CREATE TABLE `users` (
