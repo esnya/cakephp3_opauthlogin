@@ -1,18 +1,18 @@
 <?php
-namespace Opauth\Controller;
+namespace OpauthLogin\Controller;
 
-use Opauth\Controller\AppController;
+use OpauthLogin\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Core\Configure;
 use Cake\Routing\Router;
 use Cake\Utility\Security;
 
 /**
- * Opauth Controller
+ * OpauthLogin Controller
  *
- * @property Opauth\Model\Table\OpauthTable $Opauth
+ * @property OpauthLogin\Model\Table\OpauthLoginTable $OpauthLogin
  */
-class OpauthController extends AppController {
+class OpauthLoginController extends AppController {
 	public function beforeFilter(Event $event) {
 		$this->Auth->allow();
 	}

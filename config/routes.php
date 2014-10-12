@@ -1,6 +1,6 @@
 <?php
 use Cake\Routing\Router;
 
-Router::plugin('Opauth', function($routes) {
+Router::plugin('OpauthLogin', function($routes) {
 	$routes->fallbacks();
 });

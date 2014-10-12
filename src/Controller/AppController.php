@@ -1,6 +1,6 @@
 <?php
 
-namespace Opauth\Controller;
+namespace OpauthLogin\Controller;
 
 use App\Controller\AppController as BaseController;
 

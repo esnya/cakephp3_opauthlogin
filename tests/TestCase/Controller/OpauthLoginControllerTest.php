@@ -1,13 +1,13 @@
 <?php
-namespace Opauth\Test\TestCase\Controller;
+namespace OpauthLogin\Test\TestCase\Controller;
 
-use Opauth\Controller\OpauthController;
+use OpauthLogin\Controller\OpauthLoginController;
 use Cake\TestSuite\IntegrationTestCase;
 
 /**
- * Opauth\Controller\OpauthController Test Case
+ * OpauthLogin\Controller\OpauthLoginController Test Case
  */
-class OpauthControllerTest extends IntegrationTestCase {
+class OpauthLoginControllerTest extends IntegrationTestCase {
 
 /**
  * Fixtures

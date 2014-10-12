@@ -1,14 +1,14 @@
 <?php
-namespace Opauth\Test\TestCase\View\Helper;
+namespace OpauthLogin\Test\TestCase\View\Helper;
 
 use Cake\View\View;
-use Opauth\View\Helper\OpauthHelper;
+use OpauthLogin\View\Helper\OpauthLoginHelper;
 use Cake\TestSuite\TestCase;
 
 /**
- * Opauth\View\Helper\OpauthHelper Test Case
+ * OpauthLogin\View\Helper\OpauthLoginHelper Test Case
  */
-class OpauthHelperTest extends TestCase {
+class OpauthLoginHelperTest extends TestCase {
 
 /**
  * setUp method
@@ -18,7 +18,7 @@ class OpauthHelperTest extends TestCase {
 	public function setUp() {
 		parent::setUp();
 		$view = new View();
-		$this->Opauth = new OpauthHelper($view);
+		$this->OpauthLogin = new OpauthLoginHelper($view);
 	}
 
 /**
@@ -27,7 +27,7 @@ class OpauthHelperTest extends TestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->Opauth);
+		unset($this->OpauthLogin);
 
 		parent::tearDown();
 	}

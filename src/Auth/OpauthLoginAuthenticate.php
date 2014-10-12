@@ -1,5 +1,5 @@
 <?php
-	namespace Opauth\Auth;
+	namespace OpauthLogin\Auth;
 
 	use Cake\Auth\BaseAuthenticate;
 	use Cake\Network\Request;
@@ -7,7 +7,7 @@
 	use Cake\Utility\Hash;
 	use Cake\ORM\TableRegistry;
 
-	class OpauthAuthenticate extends BaseAuthenticate {
+	class OpauthLoginAuthenticate extends BaseAuthenticate {
 		public function authenticate(Request $request, Response $response) {
 			return getUser($request);
 		}

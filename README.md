@@ -1,4 +1,4 @@
-# Opauth plugin for CakePHP 3.0
+# Autentication with Opauth plugin for CakePHP 3.0
 
 ## Requirements
 
@@ -8,7 +8,7 @@
 
 ## Installation
 
-* Install cakephp3_opauth, Opauth and Opauth Strategies with composer.
+* Install cakephp3_opauthlogin, Opauth and Opauth Strategies with composer.
 
 Example:
 ```json
@@ -17,7 +17,7 @@ Example:
     "mobiledetect/mobiledetectlib": "2.*",
     "cakephp/cakephp": "3.0.*-dev",
 
-    "ukatama/cakephp3_opauth": "*",
+    "ukatama/cakephp3_opauthlogin": "*",
     "opauth/opauth": "*",
     "opauth/twitter": "*"
 }
@@ -25,7 +25,7 @@ Example:
 
 * Load the plugin
 ```php
-Plugin::load('Opauth', ['bootstrap' => false, 'routes' => true]);
+Plugin::load('OpauthLogin', ['bootstrap' => false, 'routes' => true]);
 ```
 
 ## Usage
@@ -60,10 +60,10 @@ CREATE TABLE `users` (
 );
 ```
 
-* Set up authentication compoonent and Opauth helper.
+* Set up authentication compoonent and OpauthLogin helper.
 ```php
 class AppController  extends Controller {
-    public $helpers = ['Opauth.Opauth'];
+    public $helpers = ['OpauthLogin.OpauthLogin'];
 
     public $components = [
         'Auth' => [
@@ -72,7 +72,7 @@ class AppController  extends Controller {
                 'action' => 'login'
             ],
             'authenticate' => [
-                'Opauth.Opauth',
+                'OpauthLogin.OpauthLogin',
             ]
         ]
     ];
@@ -81,8 +81,10 @@ class AppController  extends Controller {
 * Create login page.
 ```php
 <!-- Make login link as "Login with Twitter". -->
-<?php echo $this->Opauth->login(__('Login with Twitter'), 'twitter', ['class' => 'btn btn-default']); ?>
+<?php echo $this->OpauthLogin->login(__('Login with Twitter'), 'twitter', ['class' => 'btn btn-default']); ?>
 ```
+
+* You can use as same as default auth component.
 
 ## ToDo
 

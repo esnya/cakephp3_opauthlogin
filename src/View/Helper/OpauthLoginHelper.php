@@ -1,13 +1,13 @@
 <?php
-namespace Opauth\View\Helper;
+namespace OpauthLogin\View\Helper;
 
 use Cake\View\Helper;
 use Cake\View\View;
 
 /**
- * Opauth helper
+ * OpauthLogin helper
  */
-class OpauthHelper extends Helper {
+class OpauthLoginHelper extends Helper {
 	public $helpers = ['Html'];
 /**
  * Default configuration.
@@ -19,7 +19,7 @@ class OpauthHelper extends Helper {
 	public function login($label, $provider, $options = []) {
 		return $this->Html->link(
 			$label,
-			['plugin' => 'Opauth', 'controller' => 'opauth', 'action' => 'login', $provider],
+			['plugin' => 'OpauthLogin', 'controller' => 'opauth_login', 'action' => 'login', $provider],
 			$options
 		);
 	}	
