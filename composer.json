@@ -3,12 +3,12 @@
     "description": "Opauth plugin for CakePHP 3.0",
     "type": "cakephp-plugin",
     "homepage": "https://github.com/ukatama/cakephp3_opauth",
-    "authors": {
+    "authors": [
         {
             "name": "ukatama",
             "homepage": "https://github.com/ukatama/"
         }
-    },
+    ],
     "require": {
         "cakephp/cakephp": "3.0.*-dev",
         "cakephp/plugin-installer": "*"
