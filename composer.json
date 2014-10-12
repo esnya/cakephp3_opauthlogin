@@ -1,0 +1,32 @@
+{
+    "name": "ukatama/cakephp3_opauth",
+    "description": "Opauth plugin for CakePHP 3.0",
+    "type": "cakephp-plugin",
+    "homepage": "https://github.com/ukatama/cakephp3_opauth",
+    "authors": {
+        {
+            "name": "ukatama",
+            "homepage": "https://github.com/ukatama/"
+        }
+    },
+    "require": {
+        "cakephp/cakephp": "3.0.*-dev",
+        "cakephp/plugin-installer": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Opauth\\": "src",
+            "Opauth\\Test\\Fixture\\": "tests\\Fixture"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cake\\Test\\": "vendor/cakephp/cakephp/tests",
+            "Opauth\\Test\\": "tests"
+        }
+    },
+    "require": {}
+}
