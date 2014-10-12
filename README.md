@@ -8,7 +8,7 @@
 
 ## Installation
 
-1. Install cakephp3_opauth, Opauth and Opauth Strategies with composer.
+* Install cakephp3_opauth, Opauth and Opauth Strategies with composer.
 
 Example:
 ```json
@@ -23,7 +23,7 @@ Example:
 }
 ```
 
-2. Load the plugin
+* Load the plugin
 ```php
 Plugin::load('Opauth', ['bootstrap' => false, 'routes' => true]);
 ```
@@ -31,9 +31,9 @@ Plugin::load('Opauth', ['bootstrap' => false, 'routes' => true]);
 
 ## Usage
 
-1. Install this plugin.
+* Install the plugin.
 
-2. Set up config/app.php.
+* Set up config/app.php.
 ```php
 $config = [
     /** Other Configurations **/
@@ -47,7 +47,7 @@ $config = [
 ];
 ```
 
-2. Set up authentication compoonent and Opauth helper.
+* Set up authentication compoonent and Opauth helper.
 ```php
 class AppController  extends Controller {
     public $helpers = ['Opauth.Opauth'];
@@ -65,7 +65,7 @@ class AppController  extends Controller {
     ];
 ```
 
-3. Create login page.
+* Create login page.
 ```php
 <?php echo $this->Opauth->login(__('Login with Twitter'), 'twitter', ['class' => 'btn btn-default']); ?>
 ```
