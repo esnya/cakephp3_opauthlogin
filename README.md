@@ -28,7 +28,6 @@ Example:
 Plugin::load('Opauth', ['bootstrap' => false, 'routes' => true]);
 ```
 
-
 ## Usage
 
 * Install the plugin.
@@ -41,10 +40,23 @@ $config = [
     'OpauthStrategy' => [
         'Twitter' => [
             'key' => '(Consumer Key)',
-            'secret' => '(Consumer Secret')
+            'secret' => '(Consumer Secret)'
         ]
     ]
 ];
+```
+
+* Create user table
+"provider" and "uid" is required, must be a primary key.
+```sql
+CREATE TABLE `users` (
+  `provider` varchar(45) NOT NULL,
+  `uid` varchar(45) NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`provider`,`uid`)
+);
 ```
 
 * Set up authentication compoonent and Opauth helper.
@@ -67,5 +79,10 @@ class AppController  extends Controller {
 
 * Create login page.
 ```php
+<!-- Make login link as "Login with Twitter". -->
 <?php echo $this->Opauth->login(__('Login with Twitter'), 'twitter', ['class' => 'btn btn-default']); ?>
 ```
+
+## ToDo
+
+* Create Account
