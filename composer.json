@@ -3,6 +3,7 @@
     "description": "Opauth plugin for CakePHP 3.0",
     "type": "cakephp-plugin",
     "homepage": "https://github.com/ukatama/cakephp3_opauth",
+    "license": "MIT",
     "authors": [
         {
             "name": "ukatama",
