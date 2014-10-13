@@ -8,6 +8,19 @@
 	use Cake\ORM\TableRegistry;
 
 	class OpauthLoginAuthenticate extends BaseAuthenticate {
+
+		protected $_defaultConfig = [
+			'fields' => [
+				'auth_provider' => 'auth_provider',
+				'auth_uid' => 'auth_uid'
+			],
+			'userModel' => 'Users',
+			'scope' => [],
+			'contain' => null,
+			'passwordHasher' => 'Default',
+			'registrationUrl' => null,
+		];
+
 		public function authenticate(Request $request, Response $response) {
 			return getUser($request);
 		}
@@ -31,7 +44,7 @@
 			list(, $model) = pluginSplit($userModel);
 			$fields = $this->_config['fields'];
 
-			$conditions = [$model . '.auth_provider' => $provider, $model . '.auth_uid' => $uid];
+			$conditions = [$model . '.' . $fields['auth_provider'] => $provider, $model . '.' . $fields['auth_uid'] => $uid];
 
 			$scope = $this->_config['scope'];
 			if ($scope) {
@@ -55,5 +68,9 @@
 			}
 			
 			return $result;
+		}
+
+		public function getRegistrationUrl() {
+			return $this->_config['registrationUrl'];
 		}
 	}

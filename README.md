@@ -62,6 +62,16 @@ CREATE TABLE `users` (
 ```
 
 * Set up authentication compoonent and OpauthLogin helper.
+** Options
+*** 'fields' (default: [ 'auth_provider' => 'auth_provider', 'auth_uid' => 'auth_uid' ])
+
+Database table field's names.
+
+*** 'registrationUrl' (default: null)
+
+Registration page's url redirected when authoriged user is not found.
+Set null to disable ridirecting.
+
 ```php
 class AppController  extends Controller {
     public $helpers = ['OpauthLogin.OpauthLogin'];
@@ -73,7 +83,13 @@ class AppController  extends Controller {
                 'action' => 'login'
             ],
             'authenticate' => [
-                'OpauthLogin.OpauthLogin',
+                'OpauthLogin.OpauthLogin' => [
+                    'fields' => [
+                        'auth_provider' => 'auth_provider',
+                        'auth_uid' => 'auth_uid',
+                    ],
+                    'registrationUrl' => ['plugin' => null, 'controller' => 'users', 'action' => 'add']
+                ]
             ]
         ]
     ];
@@ -86,7 +102,3 @@ class AppController  extends Controller {
 ```
 
 * You can use as same as default auth component.
-
-## ToDo
-
-* Create Account
