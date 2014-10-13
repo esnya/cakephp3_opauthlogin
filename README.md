@@ -62,7 +62,9 @@ CREATE TABLE `users` (
 ```
 
 * Set up authentication compoonent and OpauthLogin helper.
+
 ** Options
+
 *** 'fields' (default: [ 'auth_provider' => 'auth_provider', 'auth_uid' => 'auth_uid' ])
 
 Database table field's names.
