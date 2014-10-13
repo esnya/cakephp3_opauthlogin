@@ -48,15 +48,16 @@ $config = [
 
 * Create user table
 
-"provider" and "uid" is required, must be a primary key.
+"auth_provider" and "auth_uid" is required. (ToDo: Field names to be configuratable)
 ```sql
 CREATE TABLE `users` (
-  `provider` varchar(45) NOT NULL,
-  `uid` varchar(45) NOT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
+  `id` varchar(45) NOT NULL,
   `name` varchar(45) NOT NULL,
-  PRIMARY KEY (`provider`,`uid`)
+  `auth_provider` varchar(45) NOT NULL,
+  `auth_uid` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
 );
 ```
 

@@ -31,7 +31,7 @@
 			list(, $model) = pluginSplit($userModel);
 			$fields = $this->_config['fields'];
 
-			$conditions = [$model . '.provider' => $provider, $model . '.uid' => $uid];
+			$conditions = [$model . '.auth_provider' => $provider, $model . '.auth_uid' => $uid];
 
 			$scope = $this->_config['scope'];
 			if ($scope) {
