@@ -62,17 +62,15 @@ CREATE TABLE `users` (
 ```
 
 * Set up authentication compoonent and OpauthLogin helper.
+  * Options
+    * 'fields' (default: [ 'auth_provider' => 'auth_provider', 'auth_uid' => 'auth_uid' ])
 
-** Options
+      Database table field's names.
 
-*** 'fields' (default: [ 'auth_provider' => 'auth_provider', 'auth_uid' => 'auth_uid' ])
+    * 'registrationUrl' (default: null)
 
-Database table field's names.
-
-*** 'registrationUrl' (default: null)
-
-Registration page's url redirected when authoriged user is not found.
-Set null to disable ridirecting.
+      Registration page's url redirected when authoriged user is not found.
+      Set null to disable ridirecting.
 
 ```php
 class AppController  extends Controller {
