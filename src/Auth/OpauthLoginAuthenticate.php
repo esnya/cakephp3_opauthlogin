@@ -8,7 +8,6 @@
 	use Cake\ORM\TableRegistry;
 
 	class OpauthLoginAuthenticate extends BaseAuthenticate {
-
 		protected $_defaultConfig = [
 			'fields' => [
 				'auth_provider' => 'auth_provider',
@@ -29,7 +28,6 @@
 			if (!isset($_SESSION)) {
 				return false;
 			}
-
 			$provider = Hash::get($_SESSION, 'opauth.auth.provider');
 			if (!$provider) {
 				return false;

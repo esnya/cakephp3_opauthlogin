@@ -35,13 +35,13 @@ class OpauthLoginController extends AppController {
 	}
 
 	public function callback() {
-		if (!isset($_SESSION)) {
-			session_start();
-		}
+		session_start();
 
-		$registrationUrl = $this->Auth->getAuthenticate('OpauthLogin.OpauthLogin')->getRegistrationUrl();
+		$oauthLogin = $this->Auth->getAuthenticate('OpauthLogin.OpauthLogin');
 
-		if (!$this->Auth->isAuthorized() && $registrationUrl && $this->Session->read('opauth.auth.uid')) {
+		$registrationUrl = $oauthLogin->getRegistrationUrl();
+
+		if (!$oauthLogin->getUser(null) && $registrationUrl && $this->Session->read('opauth.auth.uid')) {
 			return $this->redirect($registrationUrl);
 		} else {
 			return $this->redirect($this->Auth->redirectUrl());
